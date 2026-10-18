@@ -1,0 +1,21 @@
+{
+  "name": "paypay-analyzer",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p packages/core && tsc -p packages/api && tsc -p packages/web && tsc -p packages/infra",
+    "dev:api": "npm run dev -w @paypay/api",
+    "dev:web": "npm run dev -w @paypay/web",
+    "build:web": "npm run build -w @paypay/web",
+    "synth": "npm run synth -w @paypay/infra",
+    "deploy": "npm run build:web && npm run deploy -w @paypay/infra -- --require-approval broadening"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}

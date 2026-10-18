@@ -1,0 +1,7 @@
+node_modules/
+dist/
+cdk.out/
+.local-data/
+packages/web/public/config.json
+*.log
+.DS_Store
